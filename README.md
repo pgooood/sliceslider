@@ -9,7 +9,8 @@ jQuery(function(){
 	ss=$('#sliceslider > figure').sliceslider({
 		autorun:true
 		
-		// content panel position
+		// default content panel position
+		// also you can set position using data-position attribute
 		,captionPosition:'right'
 		
 		// animation types
