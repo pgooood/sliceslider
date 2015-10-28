@@ -1,7 +1,7 @@
 /**
  * @author Pavel Khoroshkov aka pgood
  */
-(function($){$.fn.fmCarousel=function(options){
+(function($){$.fn.sliceslider=function(options){
 var isIE7=navigator.appVersion.indexOf("MSIE 7.")!=-1
 ,rand=function(min,max){return Math.floor(arguments.length>1?(max-min+1)*Math.random()+min:(min+1)*Math.random());}
 ,settings=$.extend({
