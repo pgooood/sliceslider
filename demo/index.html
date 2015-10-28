@@ -1,0 +1,138 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="author" content="Pavel Khoroshkov">
+	<title>SliceSlider Demo</title>
+	<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script src="../jquery.sliceslider.js"></script>
+	<style type="text/css">
+		@font-face{
+			font-family:'Kelson';
+			src:url('fonts/KelsonSansRegularRU.eot');
+			src:local('☺'), url('fonts/KelsonSansRegularRU.ttf') format('truetype'), url('fonts/KelsonSansRegularRU.svg') format('svg');
+			font-weight:normal;
+			font-style:normal;
+		}
+		@font-face {
+			font-family:'Kelson';
+			src:url('fonts/KelsonSansBoldRU.eot');
+			src:local('☺'), url('fonts/KelsonSansBoldRU.ttf') format('truetype'), url('fonts/KelsonSansBoldRU.svg') format('svg');
+			font-weight:bold;
+			font-style:normal;
+		}
+		@font-face {
+			font-family:'Kelson';
+			src:url('fonts/KelsonSansLightRU.eot');
+			src:local('☺'), url('fonts/KelsonSansLightRU.ttf') format('truetype'), url('fonts/KelsonSansLightRU.svg') format('svg');
+			font-weight:100;
+			font-style:normal;
+		}
+		body,table,input,select,textarea{
+			font-family:'Kelson';
+			font-size:14px;
+		}
+		body{
+			width:1000px;
+			margin:0 auto;
+		}
+		#carousel{
+			position:relative;
+			width:1000px;
+			height:450px;
+			padding:0;
+			margin:0 0 20px;
+			box-shadow:0 4px 7px #555;
+		}
+		#carousel figure{
+			position:absolute;
+			left:0;
+			top:0;
+			width:100%;
+			height:100%;
+			display:block;
+			padding:0;
+			margin:0;
+			font-size:22px;
+			text-align:right;
+		}
+		#carousel figure figcaption{
+			padding:20px 30px;
+			background:#ccc;
+			background:rgba(128,128,128,0.7);
+		}
+		input.numButton.selected{
+			background:#000;
+			color:#fff;
+		}
+	</style>
+	<script>
+		var ss;
+		$(function(){
+			ss=$('#carousel > figure').fmCarousel({
+				autorun:true
+				,captionPosition:'right'
+				,useMethod:[
+					'blocks02'
+					,'blocks01'
+					,'verticalCol'
+					,'verticalColOpposite'
+					,'verticalColLouvers'
+					,'horizontalCol'
+					,'horizontalColOpposite'
+					,'horizontalColLouvers'
+				]
+				,onchange:function(i){
+					var $ns=$('input.numButton');
+					$ns.removeClass('selected');
+					$($ns.get(i)).addClass('selected');
+				}
+				,randomMethod:false
+			});
+		});
+	</script>
+</head>
+
+<body>
+	<h1>SliceSlider Demo</h1>
+	<p><a href="https://github.com/pgooood/sliceslider">Download on GitHub</a></p>
+	<div id="carousel">
+		<figure>
+			<img src="images/img01.jpg" alt="Green Leaves" width="1000" height="450">
+			<figcaption>Green<b>Leaves</b></figcaption>
+		</figure>
+		<figure>
+			<img src="images/img06.jpg" alt="Mist" width="1000" height="450">
+			<figcaption>Mist</figcaption>
+		</figure>
+		<figure>
+			<img src="images/img02.jpg" alt="Apples" width="1000" height="450">
+			<figcaption>Apple<b>Flower</b></figcaption>
+		</figure>
+		<figure>
+			<img src="images/img07.jpg" alt="" width="1000" height="450">
+			<figcaption data-position="bottom">Field</figcaption>
+		</figure>
+		<figure>
+			<img src="images/img04.jpg" alt="" width="1000" height="450">
+			<figcaption data-position="left">Rose</figcaption>
+		</figure>
+		<figure>
+			<img src="images/img08.jpg" alt="" width="1000" height="450">
+		</figure>
+	</div>
+	<input type="button" value="previous slide" onclick="ss.prev()">
+	<input type="button" value="1" class="numButton selected" onclick="ss.showSlide(0)">
+	<input type="button" value="2" class="numButton" onclick="ss.showSlide(1)">
+	<input type="button" value="3" class="numButton" onclick="ss.showSlide(2)">
+	<input type="button" value="4" class="numButton" onclick="ss.showSlide(3)">
+	<input type="button" value="5" class="numButton" onclick="ss.showSlide(4)">
+	<input type="button" value="6" class="numButton" onclick="ss.showSlide(5)">
+	<input type="button" value="next slide" onclick="ss.next()">
+	<input type="button" value="start slide show" onclick="ss.startNoTimeout()">
+	<input type="button" value="stop slide show" onclick="ss.stop()">
+</body>
+</html>
