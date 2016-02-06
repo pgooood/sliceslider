@@ -1,5 +1,8 @@
 /**
+ * SliceSlider
+ * @version 0.1
  * @author Pavel Khoroshkov aka pgood
+ * @link https://github.com/pgooood/sliceslider
  */
 (function($){$.fn.sliceslider=function(options){
 var isIE7=navigator.appVersion.indexOf("MSIE 7.")!=-1
@@ -117,18 +120,16 @@ var isIE7=navigator.appVersion.indexOf("MSIE 7.")!=-1
 			$(parentFigure).css('z-index',v);
 		};
 	}
-	,getCaption:function(){return this.caption;}
-	,setCaption:function(v){this.caption=v;}
-	,getSrc:function(){return this.$getImg().attr('src');}
-	,$getImg:function(){return this.$img;}
-	,getImg:function(){return this.$getImg().get(0);}
-	,$getFigure:function(){return this.$e;}
 	,setCaption:function(e){
 		if(!$(e).length)return;
 		this.$caption=$(e).clone();
 		this.$caption.css({'z-index':settings.zIndex+1,position:'absolute',top:'auto',right:'auto',bottom:'auto',left:'auto'});
 		$(e).hide();
 	}
+	,getSrc:function(){return this.$getImg().attr('src');}
+	,$getImg:function(){return this.$img;}
+	,getImg:function(){return this.$getImg().get(0);}
+	,$getFigure:function(){return this.$e;}
 	,showCaption:function(){
 		if(!this.$caption)return;
 		this.$s.append(this.$caption);
