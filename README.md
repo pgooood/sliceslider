@@ -1,7 +1,7 @@
 # SliceSlider
 HTML slider with some slice effects
 
-[Demo page](http://pgood.ru/userfiles/file/sliceslider/demo/)
+[Demo page](http://pgood.space/userfiles/file/sliceslider/demo/)
 
 ```js
 var ss;
